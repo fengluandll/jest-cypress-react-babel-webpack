@@ -15,5 +15,7 @@ describe('register', () => {
       .window()
       .its('localStorage.token')
       .should('be.a', 'string')
+      .findByTestId('username-display')
+      .should('have.text', user.username)
   })
 });
