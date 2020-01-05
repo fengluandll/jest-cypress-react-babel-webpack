@@ -6,8 +6,13 @@ describe('anonymous calculator', () => {
       .findByText(/^1$/).click()
       .findByText(/^\+$/).click()
       .findByText(/^2$/).click()
-      .findByText(/^=$/).click()
+      .findByText(/^=$/)
+      .then(subject => {
+        debugger
+        return subject
+      })
+      .click()
       .findByTestId('total')
-      .should('have.text', '3')
+      .should('have.text', '4')
   })
 });
