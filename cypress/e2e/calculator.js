@@ -7,7 +7,7 @@ describe('anonymous calculator', () => {
       .findByText(/^\+$/).click()
       .findByText(/^2$/).click()
       .findByText(/^=$/)
-      .debug()
+      .pause()
       .click()
       .findByTestId('total')
       .should('have.text', '4')
