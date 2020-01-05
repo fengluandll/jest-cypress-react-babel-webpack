@@ -10,5 +10,7 @@ describe('register', () => {
       .findByLabelText(/username/i).type(user.username)
       .findByLabelText(/password/i).type(user.password)
       .findByText(/submit/i).click()
+      .url()
+      .should('eq', 'http://localhost:8080/')
   })
 });
