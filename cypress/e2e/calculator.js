@@ -3,14 +3,10 @@ describe('anonymous calculator', () => {
     const user = cy
     
     user.visit('/')
-      .get('._2S_Gj6clvtEi-dZqCLelKb > :nth-child(3)') // 1
-      .click()
-      .get('._1yUJ9HTWYf2v-MMhAEVCAn > :nth-child(4)') // +
-      .click()
-      .get('._2S_Gj6clvtEi-dZqCLelKb > :nth-child(4)') // 2
-      .click()
-      .get('._1yUJ9HTWYf2v-MMhAEVCAn > :nth-child(5)') // =
-      .click()
+      .findByText(/^1$/).click()
+      .findByText(/^\+$/).click()
+      .findByText(/^2$/).click()
+      .findByText(/^=$/).click()
       .get('.mNQM6vIr72uG0YPP56ow5') // 3
       .should('have.text', '3')
   })
