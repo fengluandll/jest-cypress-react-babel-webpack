@@ -11,7 +11,7 @@ describe('register', () => {
       .findByLabelText(/password/i).type(user.password)
       .findByText(/submit/i).click()
       .url()
-      .should('eq', 'http://localhost:8080/')
+      .should('eq', `${Cypress.config().baseUrl}/`)
       .window()
       .its('localStorage.token')
       .should('be.a', 'string')
