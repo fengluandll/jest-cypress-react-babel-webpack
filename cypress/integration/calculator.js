@@ -1,3 +1,3 @@
 describe('anonymous calculator', () => {
-  it('makes calculations')
+  it('makes calculations', () => {})
 });
