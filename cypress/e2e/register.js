@@ -12,5 +12,8 @@ describe('register', () => {
       .findByText(/submit/i).click()
       .url()
       .should('eq', 'http://localhost:8080/')
+      .window()
+      .its('localStorage.token')
+      .should('be.a', 'string')
   })
 });
