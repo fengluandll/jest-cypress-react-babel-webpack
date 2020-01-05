@@ -20,6 +20,12 @@ describe('register', () => {
   })
 
   it('shows an error when user cannot register', () => {
+    cy.server().route({
+      method: 'POST',
+      url: `http://localhost:3000/register`,
+      status: 500,
+      response: {},
+    })
     cy.visit('/register')
       .findByText(/submit/i).click()
       .findByText(/error.*try again/i)
