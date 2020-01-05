@@ -18,4 +18,10 @@ describe('register', () => {
       .findByTestId('username-display')
       .should('have.text', user.username)
   })
+
+  it('shows an error when user cannot register', () => {
+    cy.visit('/register')
+      .findByText(/submit/i).click()
+      .findByText(/error.*try again/i)
+  })
 });
